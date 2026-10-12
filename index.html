@@ -1,0 +1,68 @@
+<div style="font-family: Arial, Helvetica, sans-serif; background-color: #ffffff; border: 2px solid #27ae60; border-radius: 8px; padding: 22px; width: 100%; box-sizing: border-box; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    <h3 style="color: #1e8449; margin-top: 0; font-size: 22px; display: flex; align-items: center;">
+        <span style="background-color: #27ae60; color: #ffffff; padding: 4px 10px; border-radius: 4px; font-size: 14px; margin-right: 10px;">APP 2</span>
+        Digital Graphing & Nerve Firing Visualizer
+    </h3>
+    <p style="font-size: 14px; color: #566573;">Analyze Table 1.2 data using this dual-axis visual graph comparing Lion vs. Elephant firing rates across stomach volumes.</p>
+
+    <!-- GRAPHICAL VISUAL CONTAINER (SVG GRAPH) -->
+    <div style="background-color: #fcfcfc; border: 1px solid #eaeded; border-radius: 6px; padding: 15px; margin: 15px 0; text-align: center;">
+        <svg viewBox="0 0 500 240" style="width: 100%; max-width: 600px; height: auto; background-color: #ffffff; border: 1px solid #e5e7e9; border-radius: 4px;">
+            <!-- Grid Lines -->
+            <line x1="50" y1="200" x2="460" y2="200" stroke="#bdc3c7" stroke-width="2"/>
+            <line x1="50" y1="20" x2="50" y2="200" stroke="#bdc3c7" stroke-width="2"/>
+            
+            <line x1="50" y1="155" x2="460" y2="155" stroke="#ecf0f1" stroke-width="1"/>
+            <line x1="50" y1="110" x2="460" y2="110" stroke="#ecf0f1" stroke-width="1"/>
+            <line x1="50" y1="65" x2="460" y2="65" stroke="#ecf0f1" stroke-width="1"/>
+            
+            <!-- Y-Axis Labels -->
+            <text x="40" y="205" font-size="10" text-anchor="end" fill="#7f8c8d">0 Hz</text>
+            <text x="40" y="160" font-size="10" text-anchor="end" fill="#7f8c8d">30 Hz</text>
+            <text x="40" y="115" font-size="10" text-anchor="end" fill="#7f8c8d">60 Hz</text>
+            <text x="40" y="70" font-size="10" text-anchor="end" fill="#7f8c8d">90 Hz</text>
+            <text x="40" y="25" font-size="10" text-anchor="end" fill="#7f8c8d">120 Hz</text>
+            
+            <!-- X-Axis Labels -->
+            <text x="50" y="218" font-size="10" text-anchor="middle" fill="#7f8c8d">0L</text>
+            <text x="132" y="218" font-size="10" text-anchor="middle" fill="#7f8c8d">10L</text>
+            <text x="255" y="218" font-size="10" text-anchor="middle" fill="#7f8c8d">25L</text>
+            <text x="460" y="218" font-size="10" text-anchor="middle" fill="#7f8c8d">50L</text>
+
+            <!-- Lion Line (Red) -->
+            <!-- Points: 0L:2Hz(y=197), 10L:12Hz(y=182), 25L:45Hz(y=132), 50L:120Hz(y=20) -->
+            <polyline points="50,197 132,182 255,132 460,20" fill="none" stroke="#c0392b" stroke-width="3" />
+            <circle cx="50" cy="197" r="4" fill="#c0392b" />
+            <circle cx="132" cy="182" r="4" fill="#c0392b" />
+            <circle cx="255" cy="132" r="4" fill="#c0392b" />
+            <circle cx="460" cy="20" r="5" fill="#c0392b" />
+            <text x="450" y="15" font-size="11" font-weight="bold" fill="#c0392b">Lion (120 Hz)</text>
+
+            <!-- Elephant Line (Blue) -->
+            <!-- Points: 0L:5Hz(y=192), 10L:15Hz(y=177), 25L:30Hz(y=155), 50L:65Hz(y=102) -->
+            <polyline points="50,192 132,177 255,155 460,102" fill="none" stroke="#2980b9" stroke-width="3" stroke-dasharray="4" />
+            <circle cx="50" cy="192" r="4" fill="#2980b9" />
+            <circle cx="132" cy="177" r="4" fill="#2980b9" />
+            <circle cx="255" cy="155" r="4" fill="#2980b9" />
+            <circle cx="460" cy="102" r="5" fill="#2980b9" />
+            <text x="450" y="97" font-size="11" font-weight="bold" fill="#2980b9">Elephant (65 Hz)</text>
+        </svg>
+    </div>
+
+    <!-- GRAPH ANALYSIS STATS TOGGLE BUTTONS -->
+    <div style="background-color: #e8f8f5; padding: 15px; border-radius: 6px; text-align: center;">
+        <p style="margin: 0 0 10px 0; font-weight: bold; color: #117a65;">Data Comparison Quick Insights:</p>
+        <button type="button" style="background-color: #27ae60; color: #ffffff; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; margin: 3px; font-weight: bold;" 
+            onclick="alert('LION SIGNAL GROWTH:\nFrom 0L to 50L, the Lion nerve firing rate increases from 2 Hz to 120 Hz—a massive 60x increase!');">
+            🦁 Lion Rate Growth
+        </button>
+        <button type="button" style="background-color: #2980b9; color: #ffffff; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; margin: 3px; font-weight: bold;" 
+            onclick="alert('ELEPHANT SIGNAL GROWTH:\nFrom 0L to 50L, the Elephant nerve firing rate increases from 5 Hz to 65 Hz—a 13x increase.');">
+            🐘 Elephant Rate Growth
+        </button>
+        <button type="button" style="background-color: #8e44ad; color: #ffffff; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; margin: 3px; font-weight: bold;" 
+            onclick="alert('KEY COMPARISON AT 50L:\nAt maximum volume (50 Liters), the Lion nerve firing rate (120 Hz) is nearly TWICE as fast as the Elephant (65 Hz)!');">
+            ⚡ Compare 50L Peak Response
+        </button>
+    </div>
+</div>
